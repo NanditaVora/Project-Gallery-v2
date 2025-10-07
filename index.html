@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Project Gallery — Learning Programs</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts (Inter & Roboto) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <meta name="color-scheme" content="light dark">
+</head>
+
+<body>
+
+    <header id="programHeader" class="program-header" data-theme="DA" role="banner">
+        <div class="container py-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-3">
+                <div class="program-logo" aria-hidden="true">PG</div>
+                <div>
+                    <h1 id="programTitle" class="h4 mb-0">Project Gallery</h1>
+                    <p id="programSub" class="mb-0 small text-muted">Showcasing course-end projects across tracks</p>
+                </div>
+            </div>
+
+        </div>
+        <p id="internalNote" class="mb-0 text-center">For Internal Use Only</p>
+
+    </header>
+
+    <main class="container my-4" id="mainContent">
+        <!-- Filters / Navigation -->
+        <nav aria-label="Track filters" class="mb-3">
+            <div class="d-flex flex-wrap gap-2 align-items-center">
+                <div class="me-2 small text-muted">Filter by track</div>
+                <div id="trackFilters" class="btn-group" role="tablist" aria-label="Track navigation">
+                    <!-- Buttons injected by JS (for easy extension) -->
+                </div>
+
+                <button id="clearFilter" class="btn btn-outline-secondary btn-sm ms-2"
+                    title="Show all projects">Clear</button>
+            </div>
+        </nav>
+
+        <!-- RTBs / Value Propositions (Enhanced Design) -->
+        <section id="rtbSection" class="rtb-section py-5 my-4 text-center">
+            <div class="container">
+                <h2 class="h4 mb-4 fw-semibold">Why Learners Love Our Projects</h2>
+                <div class="row g-4 justify-content-center" id="rtbRow">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="rtb-card p-4 h-100">
+                            <div class="rtb-icon mb-3">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            <h5 class="rtb-title mb-2">Real-world Problems</h5>
+                            <p class="rtb-text small">Projects emulate real business challenges, ensuring practical,
+                                job-ready learning.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="rtb-card p-4 h-100">
+                            <div class="rtb-icon mb-3">
+                                <i class="bi bi-award"></i>
+                            </div>
+                            <h5 class="rtb-title mb-2">Portfolio-Ready</h5>
+                            <p class="rtb-text small">Each project produces tangible deliverables to showcase your
+                                skills to employers.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="rtb-card p-4 h-100">
+                            <div class="rtb-icon mb-3">
+                                <i class="bi bi-tools"></i>
+                            </div>
+                            <h5 class="rtb-title mb-2">Tool Diversity</h5>
+                            <p class="rtb-text small">Work with top industry tools — Excel, SQL, Python, and
+                                visualization platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Project Grid -->
+        <!-- Project Gallery (Themed Background) -->
+        <section id="gallerySection" class="project-gallery py-5" aria-live="polite">
+            <div class="container">
+                <div class="row g-4" id="projectGrid" role="list">
+                    <!-- Project cards inserted by JS -->
+                </div>
+
+                <!-- No results -->
+                <div id="noResults" class="text-center text-muted my-5 visually-hidden">
+                    <p class="mb-0">No projects found for the selected track.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Project Details Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modalTitle" class="modal-title">Project Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalHeader" class="small text-muted mb-2"></p>
+                    <p id="modalDetailed" class="mb-3"></p>
+
+                    <h6>Technologies used</h6>
+                    <ul id="modalTech"></ul>
+
+                    <h6 class="mt-3">Core features</h6>
+                    <ul id="modalFeatures"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- App script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
